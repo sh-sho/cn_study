@@ -1,0 +1,900 @@
+{
+    "loggingPolicies": {
+      "accessLog": {
+        "isEnabled": true
+      },
+      "executionLog": {
+        "isEnabled": true,
+        "logLevel": "string"
+      }
+    },
+    "requestPolicies": {
+      "authentication": [
+        "This parameter should actually be a JSON object rather than an array - pick one of the following object variants to use",
+        {
+          "cacheKey": [
+            "string",
+            "string"
+          ],
+          "functionId": "string",
+          "isAnonymousAccessAllowed": true,
+          "parameters": {
+            "string1": "string",
+            "string2": "string"
+          },
+          "tokenHeader": "string",
+          "tokenQueryParam": "string",
+          "type": "CUSTOM_AUTHENTICATION",
+          "validationFailurePolicy": [
+            "This parameter should actually be a JSON object rather than an array - pick one of the following object variants to use",
+            {
+              "responseCode": "string",
+              "responseHeaderTransformations": {
+                "filterHeaders": {
+                  "items": [
+                    {
+                      "name": "string"
+                    },
+                    {
+                      "name": "string"
+                    }
+                  ],
+                  "type": "string"
+                },
+                "renameHeaders": {
+                  "items": [
+                    {
+                      "from": "string",
+                      "to": "string"
+                    },
+                    {
+                      "from": "string",
+                      "to": "string"
+                    }
+                  ]
+                },
+                "setHeaders": {
+                  "items": [
+                    {
+                      "ifExists": "string",
+                      "name": "string",
+                      "values": [
+                        "string",
+                        "string"
+                      ]
+                    },
+                    {
+                      "ifExists": "string",
+                      "name": "string",
+                      "values": [
+                        "string",
+                        "string"
+                      ]
+                    }
+                  ]
+                }
+              },
+              "responseMessage": "string",
+              "type": "MODIFY_RESPONSE"
+            },
+            {
+              "clientDetails": [
+                "This parameter should actually be a JSON object rather than an array - pick one of the following object variants to use",
+                {
+                  "clientId": "string",
+                  "clientSecretId": "string",
+                  "clientSecretVersionNumber": 0,
+                  "type": "CUSTOM"
+                },
+                {
+                  "type": "VALIDATION_BLOCK"
+                }
+              ],
+              "fallbackRedirectPath": "string",
+              "logoutPath": "string",
+              "maxExpiryDurationInHours": 0,
+              "responseType": "string",
+              "scopes": [
+                "string",
+                "string"
+              ],
+              "sourceUriDetails": [
+                "This parameter should actually be a JSON object rather than an array - pick one of the following object variants to use",
+                {
+                  "type": "DISCOVERY_URI",
+                  "uri": "string"
+                },
+                {
+                  "type": "VALIDATION_BLOCK"
+                }
+              ],
+              "type": "OAUTH2",
+              "useCookiesForIntermediateSteps": true,
+              "useCookiesForSession": true,
+              "usePkce": true
+            }
+          ]
+        },
+        {
+          "audiences": [
+            "string",
+            "string"
+          ],
+          "isAnonymousAccessAllowed": true,
+          "issuers": [
+            "string",
+            "string"
+          ],
+          "maxClockSkewInSeconds": 0.0,
+          "publicKeys": [
+            "This parameter should actually be a JSON object rather than an array - pick one of the following object variants to use",
+            {
+              "isSslVerifyDisabled": true,
+              "maxCacheDurationInHours": 0,
+              "type": "REMOTE_JWKS",
+              "uri": "string"
+            },
+            {
+              "keys": [
+                [
+                  "This parameter should actually be a JSON object rather than an array - pick one of the following object variants to use",
+                  {
+                    "alg": "string",
+                    "e": "string",
+                    "format": "JSON_WEB_KEY",
+                    "key_ops": [
+                      "string",
+                      "string"
+                    ],
+                    "kid": "string",
+                    "kty": "string",
+                    "n": "string",
+                    "use": "string"
+                  },
+                  {
+                    "format": "PEM",
+                    "key": "string",
+                    "kid": "string"
+                  }
+                ],
+                null
+              ],
+              "type": "STATIC_KEYS"
+            }
+          ],
+          "tokenAuthScheme": "string",
+          "tokenHeader": "string",
+          "tokenQueryParam": "string",
+          "type": "JWT_AUTHENTICATION",
+          "verifyClaims": [
+            {
+              "isRequired": true,
+              "key": "string",
+              "values": [
+                "string",
+                "string"
+              ]
+            },
+            {
+              "isRequired": true,
+              "key": "string",
+              "values": [
+                "string",
+                "string"
+              ]
+            }
+          ]
+        },
+        {
+          "isAnonymousAccessAllowed": true,
+          "maxClockSkewInSeconds": 0.0,
+          "tokenAuthScheme": "string",
+          "tokenHeader": "string",
+          "tokenQueryParam": "string",
+          "type": "TOKEN_AUTHENTICATION",
+          "validationFailurePolicy": null,
+          "validationPolicy": [
+            "This parameter should actually be a JSON object rather than an array - pick one of the following object variants to use",
+            {
+              "additionalValidationPolicy": {
+                "audiences": [
+                  "string",
+                  "string"
+                ],
+                "issuers": [
+                  "string",
+                  "string"
+                ],
+                "verifyClaims": [
+                  {
+                    "isRequired": true,
+                    "key": "string",
+                    "values": [
+                      "string",
+                      "string"
+                    ]
+                  },
+                  {
+                    "isRequired": true,
+                    "key": "string",
+                    "values": [
+                      "string",
+                      "string"
+                    ]
+                  }
+                ]
+              },
+              "clientDetails": null,
+              "isSslVerifyDisabled": true,
+              "maxCacheDurationInHours": 0,
+              "sourceUriDetails": null,
+              "type": "REMOTE_DISCOVERY"
+            },
+            {
+              "additionalValidationPolicy": {
+                "audiences": [
+                  "string",
+                  "string"
+                ],
+                "issuers": [
+                  "string",
+                  "string"
+                ],
+                "verifyClaims": [
+                  {
+                    "isRequired": true,
+                    "key": "string",
+                    "values": [
+                      "string",
+                      "string"
+                    ]
+                  },
+                  {
+                    "isRequired": true,
+                    "key": "string",
+                    "values": [
+                      "string",
+                      "string"
+                    ]
+                  }
+                ]
+              },
+              "isSslVerifyDisabled": true,
+              "maxCacheDurationInHours": 0,
+              "type": "REMOTE_JWKS",
+              "uri": "string"
+            },
+            {
+              "additionalValidationPolicy": {
+                "audiences": [
+                  "string",
+                  "string"
+                ],
+                "issuers": [
+                  "string",
+                  "string"
+                ],
+                "verifyClaims": [
+                  {
+                    "isRequired": true,
+                    "key": "string",
+                    "values": [
+                      "string",
+                      "string"
+                    ]
+                  },
+                  {
+                    "isRequired": true,
+                    "key": "string",
+                    "values": [
+                      "string",
+                      "string"
+                    ]
+                  }
+                ]
+              },
+              "keys": [
+                null,
+                null
+              ],
+              "type": "STATIC_KEYS"
+            }
+          ]
+        }
+      ],
+      "cors": {
+        "allowedHeaders": [
+          "string",
+          "string"
+        ],
+        "allowedMethods": [
+          "string",
+          "string"
+        ],
+        "allowedOrigins": [
+          "string",
+          "string"
+        ],
+        "exposedHeaders": [
+          "string",
+          "string"
+        ],
+        "isAllowCredentialsEnabled": true,
+        "maxAgeInSeconds": 0
+      },
+      "dynamicAuthentication": {
+        "authenticationServers": [
+          {
+            "authenticationServerDetail": null,
+            "key": [
+              "This parameter should actually be a JSON object rather than an array - pick one of the following object variants to use",
+              {
+                "isDefault": true,
+                "name": "string",
+                "type": "ANY_OF",
+                "values": [
+                  "string",
+                  "string"
+                ]
+              },
+              {
+                "expression": "string",
+                "isDefault": true,
+                "name": "string",
+                "type": "WILDCARD"
+              }
+            ]
+          },
+          {
+            "authenticationServerDetail": null,
+            "key": null
+          }
+        ],
+        "selectionSource": [
+          "This parameter should actually be a JSON object rather than an array - pick one of the following object variants to use",
+          {
+            "selector": "string",
+            "type": "SINGLE"
+          }
+        ]
+      },
+      "mutualTls": {
+        "allowedSans": [
+          "string",
+          "string"
+        ],
+        "isVerifiedCertificateRequired": true
+      },
+      "rateLimiting": {
+        "rateInRequestsPerSecond": 0,
+        "rateKey": "string"
+      },
+      "usagePlans": {
+        "tokenLocations": [
+          "string",
+          "string"
+        ]
+      }
+    },
+    "routes": [
+      {
+        "backend": [
+          "This parameter should actually be a JSON object rather than an array - pick one of the following object variants to use",
+          {
+            "routingBackends": [
+              {
+                "backend": null,
+                "key": null
+              },
+              {
+                "backend": null,
+                "key": null
+              }
+            ],
+            "selectionSource": null,
+            "type": "DYNAMIC_ROUTING_BACKEND"
+          },
+          {
+            "connectTimeoutInSeconds": 0.0,
+            "isSslVerifyDisabled": true,
+            "readTimeoutInSeconds": 0.0,
+            "sendTimeoutInSeconds": 0.0,
+            "type": "HTTP_BACKEND",
+            "url": "string"
+          },
+          {
+            "allowedPostLogoutUris": [
+              "string",
+              "string"
+            ],
+            "postLogoutState": "string",
+            "type": "OAUTH2_LOGOUT_BACKEND"
+          },
+          {
+            "functionId": "string",
+            "type": "ORACLE_FUNCTIONS_BACKEND"
+          },
+          {
+            "body": "string",
+            "headers": [
+              {
+                "name": "string",
+                "value": "string"
+              },
+              {
+                "name": "string",
+                "value": "string"
+              }
+            ],
+            "status": 0,
+            "type": "STOCK_RESPONSE_BACKEND"
+          }
+        ],
+        "loggingPolicies": {
+          "accessLog": {
+            "isEnabled": true
+          },
+          "executionLog": {
+            "isEnabled": true,
+            "logLevel": "string"
+          }
+        },
+        "methods": [
+          "string",
+          "string"
+        ],
+        "path": "string",
+        "requestPolicies": {
+          "authorization": [
+            "This parameter should actually be a JSON object rather than an array - pick one of the following object variants to use",
+            {
+              "type": "ANONYMOUS"
+            },
+            {
+              "allowedScope": [
+                "string",
+                "string"
+              ],
+              "type": "ANY_OF"
+            },
+            {
+              "type": "AUTHENTICATION_ONLY"
+            }
+          ],
+          "bodyValidation": {
+            "content": {
+              "string1": [
+                "This parameter should actually be a JSON object rather than an array - pick one of the following object variants to use",
+                {
+                  "validationType": "NONE"
+                }
+              ],
+              "string2": [
+                "This parameter should actually be a JSON object rather than an array - pick one of the following object variants to use",
+                {
+                  "validationType": "NONE"
+                }
+              ]
+            },
+            "required": true,
+            "validationMode": "string"
+          },
+          "cors": {
+            "allowedHeaders": [
+              "string",
+              "string"
+            ],
+            "allowedMethods": [
+              "string",
+              "string"
+            ],
+            "allowedOrigins": [
+              "string",
+              "string"
+            ],
+            "exposedHeaders": [
+              "string",
+              "string"
+            ],
+            "isAllowCredentialsEnabled": true,
+            "maxAgeInSeconds": 0
+          },
+          "headerTransformations": {
+            "filterHeaders": {
+              "items": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "string"
+                }
+              ],
+              "type": "string"
+            },
+            "renameHeaders": {
+              "items": [
+                {
+                  "from": "string",
+                  "to": "string"
+                },
+                {
+                  "from": "string",
+                  "to": "string"
+                }
+              ]
+            },
+            "setHeaders": {
+              "items": [
+                {
+                  "ifExists": "string",
+                  "name": "string",
+                  "values": [
+                    "string",
+                    "string"
+                  ]
+                },
+                {
+                  "ifExists": "string",
+                  "name": "string",
+                  "values": [
+                    "string",
+                    "string"
+                  ]
+                }
+              ]
+            }
+          },
+          "headerValidations": {
+            "headers": [
+              {
+                "name": "string",
+                "required": true
+              },
+              {
+                "name": "string",
+                "required": true
+              }
+            ],
+            "validationMode": "string"
+          },
+          "queryParameterTransformations": {
+            "filterQueryParameters": {
+              "items": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "string"
+                }
+              ],
+              "type": "string"
+            },
+            "renameQueryParameters": {
+              "items": [
+                {
+                  "from": "string",
+                  "to": "string"
+                },
+                {
+                  "from": "string",
+                  "to": "string"
+                }
+              ]
+            },
+            "setQueryParameters": {
+              "items": [
+                {
+                  "ifExists": "string",
+                  "name": "string",
+                  "values": [
+                    "string",
+                    "string"
+                  ]
+                },
+                {
+                  "ifExists": "string",
+                  "name": "string",
+                  "values": [
+                    "string",
+                    "string"
+                  ]
+                }
+              ]
+            }
+          },
+          "queryParameterValidations": {
+            "parameters": [
+              {
+                "name": "string",
+                "required": true
+              },
+              {
+                "name": "string",
+                "required": true
+              }
+            ],
+            "validationMode": "string"
+          },
+          "responseCacheLookup": [
+            "This parameter should actually be a JSON object rather than an array - pick one of the following object variants to use",
+            {
+              "cacheKeyAdditions": [
+                "string",
+                "string"
+              ],
+              "isEnabled": true,
+              "isPrivateCachingEnabled": true,
+              "type": "SIMPLE_LOOKUP_POLICY"
+            }
+          ]
+        },
+        "responsePolicies": {
+          "headerTransformations": {
+            "filterHeaders": {
+              "items": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "string"
+                }
+              ],
+              "type": "string"
+            },
+            "renameHeaders": {
+              "items": [
+                {
+                  "from": "string",
+                  "to": "string"
+                },
+                {
+                  "from": "string",
+                  "to": "string"
+                }
+              ]
+            },
+            "setHeaders": {
+              "items": [
+                {
+                  "ifExists": "string",
+                  "name": "string",
+                  "values": [
+                    "string",
+                    "string"
+                  ]
+                },
+                {
+                  "ifExists": "string",
+                  "name": "string",
+                  "values": [
+                    "string",
+                    "string"
+                  ]
+                }
+              ]
+            }
+          },
+          "responseCacheStore": [
+            "This parameter should actually be a JSON object rather than an array - pick one of the following object variants to use",
+            {
+              "timeToLiveInSeconds": 0,
+              "type": "FIXED_TTL_STORE_POLICY"
+            }
+          ]
+        }
+      },
+      {
+        "backend": null,
+        "loggingPolicies": {
+          "accessLog": {
+            "isEnabled": true
+          },
+          "executionLog": {
+            "isEnabled": true,
+            "logLevel": "string"
+          }
+        },
+        "methods": [
+          "string",
+          "string"
+        ],
+        "path": "string",
+        "requestPolicies": {
+          "authorization": null,
+          "bodyValidation": {
+            "content": {
+              "string1": null,
+              "string2": null
+            },
+            "required": true,
+            "validationMode": "string"
+          },
+          "cors": {
+            "allowedHeaders": [
+              "string",
+              "string"
+            ],
+            "allowedMethods": [
+              "string",
+              "string"
+            ],
+            "allowedOrigins": [
+              "string",
+              "string"
+            ],
+            "exposedHeaders": [
+              "string",
+              "string"
+            ],
+            "isAllowCredentialsEnabled": true,
+            "maxAgeInSeconds": 0
+          },
+          "headerTransformations": {
+            "filterHeaders": {
+              "items": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "string"
+                }
+              ],
+              "type": "string"
+            },
+            "renameHeaders": {
+              "items": [
+                {
+                  "from": "string",
+                  "to": "string"
+                },
+                {
+                  "from": "string",
+                  "to": "string"
+                }
+              ]
+            },
+            "setHeaders": {
+              "items": [
+                {
+                  "ifExists": "string",
+                  "name": "string",
+                  "values": [
+                    "string",
+                    "string"
+                  ]
+                },
+                {
+                  "ifExists": "string",
+                  "name": "string",
+                  "values": [
+                    "string",
+                    "string"
+                  ]
+                }
+              ]
+            }
+          },
+          "headerValidations": {
+            "headers": [
+              {
+                "name": "string",
+                "required": true
+              },
+              {
+                "name": "string",
+                "required": true
+              }
+            ],
+            "validationMode": "string"
+          },
+          "queryParameterTransformations": {
+            "filterQueryParameters": {
+              "items": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "string"
+                }
+              ],
+              "type": "string"
+            },
+            "renameQueryParameters": {
+              "items": [
+                {
+                  "from": "string",
+                  "to": "string"
+                },
+                {
+                  "from": "string",
+                  "to": "string"
+                }
+              ]
+            },
+            "setQueryParameters": {
+              "items": [
+                {
+                  "ifExists": "string",
+                  "name": "string",
+                  "values": [
+                    "string",
+                    "string"
+                  ]
+                },
+                {
+                  "ifExists": "string",
+                  "name": "string",
+                  "values": [
+                    "string",
+                    "string"
+                  ]
+                }
+              ]
+            }
+          },
+          "queryParameterValidations": {
+            "parameters": [
+              {
+                "name": "string",
+                "required": true
+              },
+              {
+                "name": "string",
+                "required": true
+              }
+            ],
+            "validationMode": "string"
+          },
+          "responseCacheLookup": null
+        },
+        "responsePolicies": {
+          "headerTransformations": {
+            "filterHeaders": {
+              "items": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "string"
+                }
+              ],
+              "type": "string"
+            },
+            "renameHeaders": {
+              "items": [
+                {
+                  "from": "string",
+                  "to": "string"
+                },
+                {
+                  "from": "string",
+                  "to": "string"
+                }
+              ]
+            },
+            "setHeaders": {
+              "items": [
+                {
+                  "ifExists": "string",
+                  "name": "string",
+                  "values": [
+                    "string",
+                    "string"
+                  ]
+                },
+                {
+                  "ifExists": "string",
+                  "name": "string",
+                  "values": [
+                    "string",
+                    "string"
+                  ]
+                }
+              ]
+            }
+          },
+          "responseCacheStore": null
+        }
+      }
+    ]
+  }

@@ -16,7 +16,7 @@ steps:
     name: "Docker image build"
     timeoutInSeconds: 4000
     command: 
-      cd cn_func
+      cd cn_helloworld_func
       fn build
       docker tag ${function_name}:${fuction_version} cn_helloworld_func
       tag=${function_version}
@@ -27,6 +27,6 @@ steps:
         timeoutInSeconds: 400
 
 outputArtifacts:
-  - name: cn_helloworld_func
+  - name: 
     type: DOCKER_IMAGE
     location: cn_helloworld_func

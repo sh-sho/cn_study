@@ -5,8 +5,8 @@ shell: bash
 
 env:
   variables:
-    function_name: "cn_helloworld_func"
-    fuction_version: "0.0.4"
+    function_name: cn_helloworld_func
+    fuction_version: 0.0.3
 
   exportedVariables:
     - tag

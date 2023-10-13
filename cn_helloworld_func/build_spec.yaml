@@ -1,0 +1,32 @@
+version: 0.1
+component: build
+timeoutInSeconds: 10000
+shell: bash
+
+env:
+  variables:
+    function_name: "cn_helloworld_func"
+    fuction_version: "0.0.4"
+
+  exportedVariables:
+    - tag
+
+steps:
+  - type: Command
+    name: "Docker image build"
+    timeoutInSeconds: 4000
+    command: 
+      cd cn_func
+      fn build
+      docker tag ${function_name}:${fuction_version} cn_helloworld_func
+      tag=${function_version}
+    onFailure:
+      - type: Command
+        command: |
+          echo "Failure successfully handled"
+        timeoutInSeconds: 400
+
+outputArtifacts:
+  - name: cn_helloworld_func
+    type: DOCKER_IMAGE
+    location: cn_helloworld_func

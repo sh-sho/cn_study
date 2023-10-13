@@ -15,7 +15,7 @@ steps:
   - type: Command
     name: "Docker image build"
     timeoutInSeconds: 4000
-    command: 
+    command: |
       cd cn_helloworld_func
       fn build
       docker tag ${function_name}:${function_version} ${function_name}

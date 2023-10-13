@@ -6,7 +6,7 @@ shell: bash
 env:
   variables:
     function_name: cn_helloworld_func
-    fuction_version: 0.0.3
+    function_version: 0.0.3
 
   exportedVariables:
     - tag
@@ -18,7 +18,7 @@ steps:
     command: 
       cd cn_helloworld_func
       fn build
-      docker tag ${function_name}:${fuction_version} cn_helloworld_func
+      docker tag ${function_name}:${function_version} ${function_name}
       tag=${function_version}
     onFailure:
       - type: Command

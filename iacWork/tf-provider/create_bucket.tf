@@ -1,8 +1,3 @@
-variable "bucket_name" {
-    type = string
-    default = "tf_cn_bucket"
-}
-
 resource "oci_objectstorage_bucket" "test_bucket" {
     #Required
     compartment_id = "ocid1.compartment.oc1..aaaaaaaavu633dop4qlvss3ebdvrzo6hwnr4g5e7s42frmlfvlsjpnyss7xa"

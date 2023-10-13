@@ -1,1 +1,3 @@
 iacWork/tf-provider/.terraform/
+*.zip
+*.tfstate*

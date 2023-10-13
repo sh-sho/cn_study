@@ -27,6 +27,6 @@ steps:
         timeoutInSeconds: 400
 
 outputArtifacts:
-  - name: 
+  - name: cn_helloworld_func
     type: DOCKER_IMAGE
     location: cn_helloworld_func

@@ -35,7 +35,7 @@ spec:
       containers:
       - name: cowweb
         # image: phx.ocir.io/orasejapan/cn_study_repo/helidon-mp:0.0.1
-        image: phx.ocir.io/orasejapan/cn_study_repo/helidon-mp:${BUILDRUN_HASH}
+        image: phx.ocir.io/orasejapan/cn_study_repo/helidon-mp:${image_version}
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

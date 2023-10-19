@@ -25,7 +25,7 @@ steps:
     name: "Docker Build"
     command: |
       cd helidon-mp
-      docker build -t .
+      docker build .
     onFailure:
       - type: Command
         command: |

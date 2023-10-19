@@ -20,7 +20,7 @@ public class CowsayResource {
     @Path("/say")
     public String say(@QueryParam("say") Optional<String> message, @QueryParam("cowfile") Optional<String> cowfile) {
         var env = message.map(m -> System.getenv(m));
-        var params = new String[] { "-f", "default", "Moo!" };
+        var params = new String[] { "-f", "default", "Hello" };
         return Cowsay.say(params);
     }
 

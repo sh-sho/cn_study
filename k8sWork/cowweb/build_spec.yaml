@@ -36,4 +36,4 @@ steps:
 outputArtifacts:
   - name: helidon-mp
     type: DOCKER_IMAGE
-    location: helidon-mp:latest
+    location: helidon-mp

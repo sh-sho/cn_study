@@ -26,7 +26,7 @@ public class CowsayResourceTest {
     @Test
     public void testCowsayDefault() {
         var actual = target.path("cowsay/say").request().get(String.class);
-        var expected = Cowsay.say(new String[] { "-f", "default", "Moo!"});
+        var expected = Cowsay.say(new String[] { "-f", "default", "Hello"});
         assertEquals(expected, actual);
     }
 }

@@ -8,7 +8,8 @@ env:
     image_name: helidon-mp
     image_version: 0.0.1
   exportedVariables:
-    - BUILDRUN_HASH   
+    - BUILDRUN_HASH
+    - tag
    
 steps:
   - type: Command
@@ -29,6 +30,7 @@ steps:
     command: |
       cd helidon-mp
       docker build -t ${image_name}:${image_version} .
+      tag=${image_version}
     onFailure:
       - type: Command
         command: |

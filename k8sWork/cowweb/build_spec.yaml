@@ -5,7 +5,7 @@ runAs: root
 shell: bash                        
 env:  
   exportedVariables:
-    - BUILDRUN_HASH               
+    - BUILDRUN_HASH             
    
 steps:
   - type: Command
@@ -25,7 +25,7 @@ steps:
     name: "Docker Build"
     command: |
       cd helidon-mp
-      docker build -t helidon-mp .
+      docker build -t helidon-mp:${BUILDRUN_HASH} .
     onFailure:
       - type: Command
         command: |

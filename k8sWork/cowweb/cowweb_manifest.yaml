@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: cowweb
+  name: cowweblb
+  annotations:
+    service.beta.kubernetes.io/oci-load-balancer-shape: "flexible"
+    service.beta.kubernetes.io/oci-load-balancer-shape-flex-min: "10"
+    service.beta.kubernetes.io/oci-load-balancer-shape-flex-max: "100"
+spec:
+  type: LoadBalancer
+  selector:
+    app: cowweb
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8080
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cowweb
+spec:
+  selector:
+    matchLabels:
+      app: cowweb
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: cowweb
+    spec:
+      containers:
+      - name: cowweb
+        # image: phx.ocir.io/orasejapan/cn_study_repo/helidon-mp:0.0.1
+        image: phx.ocir.io/orasejapan/cn_study_repo/helidon-mp:${BUILDRUN_HASH}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+

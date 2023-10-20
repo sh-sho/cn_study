@@ -6,7 +6,7 @@ shell: bash
 env:
   variables:
     image_name: helidon-mp
-    image_version: 0.0.2
+    image_version: 0.0.5
   exportedVariables:
     - tag
    

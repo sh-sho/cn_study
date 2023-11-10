@@ -1,3 +1,5 @@
 iacWork/tf-provider/.terraform/
+streamingWork/tf-streaming/.terraform/
+*.terraform/
 *.zip
 *.tfstate*

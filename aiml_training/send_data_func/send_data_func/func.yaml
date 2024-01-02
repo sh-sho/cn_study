@@ -1,6 +1,6 @@
 schema_version: 20180708
 name: send_data_func
-version: 0.0.149
+version: 0.0.189
 runtime: docker
 build_image: fnproject/python:3.9-dev
 run_image: fnproject/python:3.9

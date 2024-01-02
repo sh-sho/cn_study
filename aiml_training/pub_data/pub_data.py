@@ -43,7 +43,7 @@ error_data = {
 def produce_messages(client, stream_id, i):
     # Build up a PutMessagesDetails and publish some messages to the stream
     message_list = []#      
-    time.sleep(5)
+    time.sleep(1)
     key = "messageKey" + str(i)
     #   data_bytes = bytes(data, 'utf-8')
     value = json.dumps(error_data)
@@ -67,7 +67,7 @@ config = oci.config.from_file(ociConfigFilePath, ociProfileName)
 stream_client = oci.streaming.StreamClient(config, service_endpoint=ociMessageEndpoint)
 
 # Publish some messages to the stream
-for i in range(5):
+for i in range(10):
     produce_messages(stream_client, ociStreamOcid, i)
 
 # data = {

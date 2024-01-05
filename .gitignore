@@ -4,3 +4,4 @@ streamingWork/tf-streaming/.terraform/
 *.zip
 *.tfstate*
 aiml_training/stream_analytics_work/.ssh/
+*/.ssh/
